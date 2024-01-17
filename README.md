@@ -1,1 +1,1 @@
-# This is my persopnal Blog!
+# This is my personal Blog!
