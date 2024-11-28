@@ -34,9 +34,21 @@ titles_from_headings:
   strip_title: true
   collections: true
 
-defaults:
-  - scope:
-      path: ""
-      type: post
-    values:
-      tags: Other
+# defaults:
+#   - scope:
+#       path: ""
+#       type: post
+#     values:
+#       tags: Other
+# 添加导航栏链接
+# 在 _config.yml 中的 pages 部分添加 Publication 页面
+collections:
+  publications:
+    output: true
+
+
+navbar_links:
+  - title: "Home"
+    url: "/"
+  - title: "Publications"
+    url: "/publications"
