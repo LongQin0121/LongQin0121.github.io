@@ -1,8 +1,0 @@
-{
-    "Idempotent": "Repeated requests with the same parameters result in the same state of the resource. For instance, deleting a file is idempotent because once the file is deleted, subsequent delete requests don't change the state.",
-    "Safe": "The method doesn't alter the state of the resource; it's essentially read-only.",
-    "Has Body": "Indicates whether the HTTP method typically includes a message body. For example, POST requests often include data to be processed by the server."
-}
-
-
-
