@@ -1,0 +1,185 @@
+/* Increase navbar height */
+.navbar {
+    min-height: 70px; /* Adjust this value for your desired navbar height */
+    /* background-color: #e6edf1;
+    background-image: linear-gradient(to right, #f2f6f9, #dbecfa); */
+    /* background-color: rgba(0, 0, 0, 0.7);  */
+    background-color:#fff
+  
+  }
+  
+  /* Adjust the alignment of navbar-brand */
+  .navbar-brand {
+    height: 70px; /* Should match the new navbar height */
+    padding-top: 15px; /* Adjust this value to vertically center the content */
+    padding-bottom: 15px; /* Adjust this value to vertically center the content */
+  }
+  
+  /* Adjust the alignment of navbar-nav li items */
+  .navbar .navbar-nav > li > a {
+    padding-top: 15px; /* Adjust this value to vertically center the content */
+    padding-bottom: 15px; /* Adjust this value to vertically center the content */
+    font-size: 19px; /* Adjust the size as needed */
+  }
+  
+  /* Adjust the alignment of navbar buttons */
+  .navbar .navbar-btn {
+    margin-top: 10px; /* Adjust this value to align the buttons in the middle of navbar */
+  }
+  
+  /* Adjust the toggle button (hamburger icon) for small screens */
+  .navbar-header .navbar-toggle {
+    margin-top: 10px; /* Adjust this value to vertically center the toggle button */
+    margin-bottom: 10px; /* Adjust this value to vertically center the toggle button */
+  }
+  
+  /* Responsive adjustments for the navbar-brand on small screens */
+  @media (max-width: 767px) {
+    .navbar-brand {
+      height: auto;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  
+
+  /* body { padding-top: 70px; } */
+  .gradient-box {
+    /* border: 20px solid yellow; Yellow border around the box */
+    padding: 10px; /* Adds some space inside the box */
+    margin-bottom: 10px; /* Adds some space below the box */
+    background-image: linear-gradient(to right, rgb(149, 169, 247), rgb(222, 244, 238)); 
+    border-radius: 15px;
+  }
+  
+
+/* History Set a fixed height for the carousel and the images within it */
+.carousel-inner {
+    height: auto; /* Adjust this height to suit your design */
+  }
+  
+  .carousel-inner .item img {
+    width: auto; /* Maintain the aspect ratio */
+    height: 100%; /* Fit the height to the carousel */
+    object-fit: cover; /* This will cover the area, potentially cutting off some parts of the image */
+    margin: auto; /* This will center the image in the carousel */
+    border-radius: 24px; 
+  }
+  
+
+
+/* time line css ,reference from chatGpt,and W3 school */
+:root {
+    --primary: #37a9e1;
+    --primary-gradient: linear-gradient(45deg, #153c7e 0%, #37a9e1 100%);
+   
+  }
+  .section-header {
+    text-align: center;
+  }
+  .section-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .section-header hr {
+    border: 1px solid #fff;
+    width: 56px;
+  }
+  .bg-gradient_solid {
+    background: var(--primary-gradient);
+    color: #fff;
+    padding: 48px 0;
+    border-radius: 25px;
+  }
+  .steps {
+    position: relative;
+    margin-top: 32px;
+  }
+  .steps::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    background-color: white;
+    opacity: 0.4;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+  }
+  
+  .steps .content p {
+    color: #676767;
+    font-size: 16px;
+  }
+  
+  .steps .content h2 {
+    font-weight: 600;
+    font-size: 16px;
+    color: #676767;
+  }
+  
+  .steps-container {
+    position: relative;
+    background-color: inherit;
+    width: calc(50% + 32px);
+  }
+  
+  .steps-container .content {
+    padding: 32px;
+    background-color: rgb(222, 244, 238);
+    position: relative;
+    border-radius: 60px 60px 60px 30px;
+    
+    box-shadow: 0px 16px 27px rgba(48, 145, 126, 0.1);
+  }
+  
+  .steps .steps-container:nth-child(even) {
+    left: calc(50% - 32px);
+    flex-direction: row-reverse;
+  }
+  
+  .steps-container {
+    display: flex;
+  }
+  
+  .steps .steps-container .date {
+    font-weight: 900;
+    font-size: 16px;
+    color: #e1eae7;
+    margin-bottom: 10px;
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    flex-shrink: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 777;
+  }
+  
+  .step-line {
+    width: 40px;
+    background-color: #fff;
+    height: 1px;
+    margin-top: 31px;
+    opacity: 0.4;
+    flex-shrink: 0;
+  }
+  
+  @media (max-width: 767px) {
+    .steps::after {
+      left: 32px;
+    }
+    .steps-container {
+      left: 0;
+      flex-direction: row-reverse;
+      width: auto;
+      margin-bottom: 16px;
+    }
+    .steps .steps-container:nth-child(even) {
+      left: 0;
+    }
+  }
+  
