@@ -1,0 +1,48 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation bar styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+/* Content area styling */
+.content {
+    text-align: center;
+    padding: 50px;
+}
+
+
+/* Center and style the profile picture */
+.avatar {
+    text-align: center; /* Center the image */
+    margin: 20px 0; /* Add spacing around the image */
+}
+
+.profile-picture {
+    width: 350px; /* Set image width */
+    height: 450px; /* Set image height */
+    border-radius: 50%; /* Make the image circular */
+    border: 0.5px solid #95af9d; /* Add a border around the image */
+}
+
