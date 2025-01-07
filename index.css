@@ -1,48 +1,74 @@
-/* General styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
 
-/* Navigation bar styling */
-.navbar {
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-    padding: 10px 0;
-}
+  .timeline {
+      list-style: none;
+      padding: 0;
+    }
+  
+    .timeline-card {
+      position: relative;
+      padding-left: 80px;
+      margin-bottom: 20px;
+    }
+  
+    .timeline-card:before {
+      content: '';
+      position: absolute;
+      left: 40px;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid #00BFFF;
+    }
+  
+    .card {
+      background: #f9f9f9;
+      border-left: 4px solid #00BFFF;
+      border-radius: 3px;
+      padding: 15px;
+      position: relative;
+    }
+  
+    .timeline-card2 {
+      position: relative;
+      padding-left: 80px;
+      margin-bottom: 20px;
+    }
+  
+    .timeline-card2:before {
+      content: '';
+      position: absolute;
+      left: 40px;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid #097325;
+    }
+  
+    .card2 {
+      background: #f9f9f9;
+      border-left: 4px solid #097325;
+      border-radius: 3px;
+      padding: 15px;
+      position: relative;
+    }
+  
+    .card h4 {
+      margin-top: 0;
+    }
+    
+    .text-muted {
+      color: #696767;
+    }
+    
+    .page-break {
+      page-break-after: always;
+    }
+    
+    .education-section {
+      margin-top: 2rem;
+    }
+  
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-}
-
-.navbar a:hover {
-    background-color: #575757;
-    border-radius: 4px;
-}
-
-/* Content area styling */
-.content {
-    text-align: center;
-    padding: 50px;
-}
-
-
-/* Center and style the profile picture */
-.avatar {
-    text-align: center; /* Center the image */
-    margin: 20px 0; /* Add spacing around the image */
-}
-
-.profile-picture {
-    width: 350px; /* Set image width */
-    height: 450px; /* Set image height */
-    border-radius: 50%; /* Make the image circular */
-    border: 0.5px solid #95af9d; /* Add a border around the image */
-}
-
+  
