@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Timeline - From ATC to Academia</title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        .bg-gradient_solid {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 40px 0;
+            border-radius: 15px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .section-header hr {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            border: none;
+            margin: 0 auto;
+        }
+
+        .steps {
+            position: relative;
+            padding: 50px 0;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #3498db, #9b59b6);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        .steps-container {
+            position: relative;
+            margin-bottom: 80px;
+            width: 50%;
+            padding: 20px;
+        }
+
+        .steps-container:nth-child(odd) {
+            left: 0;
+            padding-right: 80px;
+        }
+
+        .steps-container:nth-child(even) {
+            left: 50%;
+            padding-left: 80px;
+        }
+
+        /* Special styling for the first group (Career Beginning + 2 images) */
+        .career-beginning-group {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 120px;
+            position: relative;
+        }
+
+        .career-beginning-text {
+            width: 50%;
+            padding-right: 80px;
+        }
+
+        .career-beginning-images {
+            width: 50%;
+            padding-left: 80px;
+        }
+
+        .image-item {
+            margin-bottom: 30px;
+        }
+
+        .image-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .content {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1;
+        }
+
+        .content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .steps-container:nth-child(odd) .content::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid white;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+        }
+
+        .steps-container:nth-child(even) .content::after {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-right: 15px solid white;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+        }
+
+        /* Special arrows for career beginning group */
+        .career-beginning-text .content::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid white;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+        }
+
+        .step-line {
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid #3498db;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .steps-container:nth-child(odd) .step-line {
+            right: -10px;
+        }
+
+        .steps-container:nth-child(even) .step-line {
+            left: -10px;
+        }
+
+        /* Special step line for career beginning - positioned on center line */
+        .career-beginning-step-line {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid #3498db;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .date {
+            position: absolute;
+            top: 0;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 3;
+            white-space: nowrap;
+        }
+
+        .steps-container:nth-child(odd) .date {
+            right: -25px;
+        }
+
+        .steps-container:nth-child(even) .date {
+            left: -25px;
+        }
+
+        /* Special date for career beginning - positioned on center line */
+        .career-beginning-date {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 3;
+            white-space: nowrap;
+        }
+
+        .content h2 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            color: #5d6d7e;
+            line-height: 1.6;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+
+        .category {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        .atc {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .education {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+        }
+
+        .research {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            color: white;
+        }
+
+        .transition {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            color: white;
+        }
+
+        /* Paired content containers for text and images on same line */
+        .paired-content {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .paired-left {
+            width: 50%;
+            padding-right: 100px;
+        }
+
+        .paired-right {
+            width: 50%;
+            padding-left: 100px;
+        }
+
+        .paired-step-line {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid #3498db;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .paired-date {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 3;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .steps::before {
+                left: 30px;
+            }
+
+            .career-beginning-group {
+                flex-direction: column;
+            }
+
+            .career-beginning-text,
+            .career-beginning-images {
+                width: 100%;
+                padding-left: 70px !important;
+                padding-right: 20px !important;
+            }
+
+            .career-beginning-step-line {
+                left: 30px !important;
+                transform: none !important;
+            }
+
+            .career-beginning-date {
+                left: 70px !important;
+                transform: none !important;
+                top: -10px;
+            }
+
+            .steps-container {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 70px !important;
+                padding-right: 20px !important;
+            }
+
+            .step-line {
+                left: 20px !important;
+                right: auto !important;
+            }
+
+            .date {
+                left: 60px !important;
+                right: auto !important;
+                top: -10px;
+            }
+
+            .content::after {
+                display: none;
+            }
+
+            .paired-content {
+                flex-direction: column;
+            }
+
+            .paired-left,
+            .paired-right {
+                width: 100%;
+                padding-left: 70px !important;
+                padding-right: 20px !important;
+            }
+
+            .paired-step-line {
+                left: 30px !important;
+                transform: none !important;
+            }
+
+            .paired-date {
+                left: 70px !important;
+                transform: none !important;
+                top: -10px;
+            }
+
+            .paired-left .content::after,
+            .paired-right .content::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Career Journey</h1>
+            <p>From Air Traffic Control to Academic Research</p>
+        </div>
+
+        <div class="bg-gradient_solid">
+            <div class="section-header">
+                <h2>The Evolution of My Career</h2>
+                <hr>
+            </div>
+            
+            <div class="steps">
+                <!-- Career Beginning Group -->
+                <div class="career-beginning-group" data-aos="fade-up">
+                    <div class="career-beginning-text">
+                        <div class="content">
+                            <h2>Career Beginning</h2>
+                            <p>Graduated from CAUC (Civil Aviation University of China) majoring in Air Traffic Management and started working at Shanghai ATC Center.</p>
+                            <span class="category atc">ATC Career</span>
+                        </div>
+                        <i class="career-beginning-step-line"></i>
+                        <div class="career-beginning-date">2011</div>
+                    </div>
+                    
+                    <div class="career-beginning-images">
+                        <div class="image-item" data-aos="fade-left" data-aos-delay="200">
+                            <div class="content image-only-content">
+                                <img src="imagesTime/cauc.png" alt="CAUC University" style="width:100%; height:auto; border-radius:15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+                            </div>
+                        </div>
+                        
+                        <div class="image-item" data-aos="fade-left" data-aos-delay="400">
+                            <div class="content image-only-content">
+                                <img src="imagesTime/shanghaiAPP.png" alt="Shanghai ATC Center" style="width:100%; height:auto; border-radius:15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Continue with regular timeline -->
+                <!-- Professional Certification with ATC License -->
+                <div class="paired-content" data-aos="fade-up">
+                    <div class="paired-left">
+                        <div class="content image-only-content">
+                            <img src="imagesTime/atclicense.png" alt="ATC License" style="width:100%; height:auto; border-radius:15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+                        </div>
+                    </div>
+                    <div class="paired-right">
+                        <div class="content">
+                            <h2>Professional Certification</h2>
+                            <p>Became fully qualified air traffic controller. Obtained procedure license, radar/ADS-B license, and English proficiency license.</p>
+                            <span class="category atc">ATC Career</span>
+                        </div>
+                    </div>
+                    <i class="paired-step-line"></i>
+                    <div class="paired-date">2013-2014</div>
+                </div>
+
+                <div class="steps-container" data-aos="fade-right">
+                    <div class="content">
+                        <h2>ATC On-Site Instructor</h2>
+                        <p>Promoted to on-site instructor position, responsible for training new air traffic controllers in real operational environment.</p>
+                        <span class="category atc">ATC Career</span>
+                    </div>
+                    <i class="step-line"></i>
+                    <div class="date">2017</div>
+                </div>
+
+                <div class="steps-container" data-aos="fade-left">
+                    <div class="content">
+                        <h2>Simulator Training Instructor</h2>
+                        <p>Advanced to simulator refreshing training instructor, conducting advanced training programs for experienced controllers.</p>
+                        <span class="category atc">ATC Career</span>
+                    </div>
+                    <i class="step-line"></i>
+                    <div class="date">2018</div>
+                </div>
+
+                <!-- Computer Science Journey with Assembly -->
+                <div class="paired-content" data-aos="fade-up">
+                    <div class="paired-left">
+                        <div class="content">
+                            <h2>Computer Science Journey Begins</h2>
+                            <p>Started learning fundamentals of computer science including computer architecture, assembly language, data structures and algorithms.</p>
+                            <span class="category transition">Career Transition</span>
+                        </div>
+                    </div>
+                    <div class="paired-right">
+                        <div class="content image-only-content">
+                            <img src="imagesTime/Assembly.png" alt="Assembly Language" style="width:100%; height:auto; border-radius:15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+                        </div>
+                    </div>
+                    <i class="paired-step-line"></i>
+                    <div class="paired-date">2019</div>
+                </div>
+
+                <!-- Master's Degree with UWA -->
+                <div class="paired-content" data-aos="fade-up">
+                    <div class="paired-left">
+                        <div class="content image-only-content">
+                            <img src="imagesTime/uwa.png" alt="University of Western Australia" style="width:100%; height:auto; border-radius:15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+                        </div>
+                    </div>
+                    <div class="paired-right">
+                        <div class="content">
+                            <h2>Master's Degree at UWA</h2>
+                            <p>Pursued Master's degree in Computer Science at University of Western Australia for 2 years, transitioning from aviation to technology.</p>
+                            <span class="category education">Education</span>
+                        </div>
+                    </div>
+                    <i class="paired-step-line"></i>
+                    <div class="paired-date">2023-2024</div>
+                </div>
+
+                <!-- Teaching Assistant with Michael -->
+                <div class="paired-content" data-aos="fade-up">
+                    <div class="paired-left">
+                        <div class="content">
+                            <h2>Teaching Assistant Role</h2>
+                            <p>Started as undergraduate teaching assistant, working with Professor Mike Wise and Zhi Zhang on Cybersecurity, Bash scripting, professional computing, and high performance computing.</p>
+                            <span class="category education">Education</span>
+                        </div>
+                    </div>
+                    <div class="paired-right">
+                        <div class="content image-only-content">
+                            <img src="imagesTime/michael.png" alt="Professor Mike Wise" style="width:100%; height:auto; border-radius:15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+                        </div>
+                    </div>
+                    <i class="paired-step-line"></i>
+                    <div class="paired-date">Nov 2023</div>
+                </div>
+
+                <!-- Research Excellence with Mark -->
+                <div class="paired-content" data-aos="fade-up">
+                    <div class="paired-left">
+                        <div class="content image-only-content">
+                            <img src="imagesTime/Mark.png" alt="Research Excellence" style="width:100%; height:auto; border-radius:15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+                        </div>
+                    </div>
+                    <div class="paired-right">
+                        <div class="content">
+                            <h2>Research Excellence</h2>
+                            <p>Conducted 1-year research on Deep Learning in Trajectory Prediction using LSTM and Transformer models. Thesis ranked top 2 among all research students.</p>
+                            <span class="category research">Research</span>
+                        </div>
+                    </div>
+                    <i class="paired-step-line"></i>
+                    <div class="paired-date">2024</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AOS JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            anchorPlacement: 'top-bottom',
+            duration: 1500,
+            easing: 'ease-out-back',
+        });
+    </script>
+</body>
+</html>
