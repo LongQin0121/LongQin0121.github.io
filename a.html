@@ -46,6 +46,37 @@
             font-size: 1.2em;
         }
 
+        .home-button {
+            position: fixed;
+            bottom: 10px;
+            right: 2px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.8em;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 1000;
+        }
+
+        .home-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.5);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .home-button::before {
+            content: "⌂";
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
         .bg-gradient_solid {
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             padding: 40px 0;
@@ -345,7 +376,60 @@
             white-space: nowrap;
         }
 
+        .career-evolution {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .career-stage {
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .arrow {
+            margin: 0 1.5rem;
+            font-size: 1.5rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+
         @media (max-width: 768px) {
+            .home-button {
+                bottom: 20px;
+                right: 10px;
+                padding: 8px 15px;
+                font-size: 0.75em;
+            }
+            
+            .home-button::before {
+                font-size: 1em;
+            }
+            
+            .career-evolution {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+            
+            .career-stage {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .arrow {
+                margin: 0 1rem;
+                font-size: 1.2rem;
+            }
+            
             .steps::before {
                 left: 30px;
             }
@@ -421,98 +505,6 @@
                 display: none;
             }
         }
-
-               .career-evolution {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0; /* 上下改为0.5rem 0.1rem 0.1rem */
-            margin: 0; /* 去除默认margin */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 1rem;
-            font-weight: 500;
-            color: #333;
-        }
-
-        .career-stage {
-            padding: 0.5rem 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 6px;
-            font-weight: 600;
-        }
-
-        .arrow {
-            margin: 0 1.5rem;
-            font-size: 1.5rem;
-            color: #667eea;
-            font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            .career-evolution {
-                font-size: 1rem;
-                padding: 1rem;
-            }
-            
-            .career-stage {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.9rem;
-            }
-            
-            .arrow {
-                margin: 0 1rem;
-                font-size: 1.2rem;
-            }
-        }
-
-        /* button */
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .header h1 {
-            color: #2c3e50;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 300;
-        }
-
-        .header p {
-            color: #7f8c8d;
-            font-size: 1.2em;
-        }
-
-        .home-button {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .home-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-        }
-
-        .home-button::before {
-            content: "🏠";
-            font-size: 1.1em;
-        }
     </style>
 </head>
 <body>
@@ -520,19 +512,18 @@
         <div class="header">
             <!-- <h1>Long Career Journey</h1> -->
             <!-- <p>From ATCO to Computer Science, to ATM Academic</p> -->
-                    <p class="career-evolution">
-            <span class="career-stage">ATCO</span>
-            <span class="arrow">→</span>
-            <span class="career-stage">Computer Science</span>
-            <span class="arrow">→</span>
-            <span class="career-stage">ATM Academic</span>
+            <p class="career-evolution">
+                <span class="career-stage">ATCO</span>
+                <span class="arrow">→</span>
+                <span class="career-stage">Computer Science</span>
+                <span class="arrow">→</span>
+                <span class="career-stage">ATM Academic</span>
             </p>
         </div>
 
         <div class="bg-gradient_solid">
             <div class="section-header">
                <h4>The Evolution of My Career</h4>
-              
             </div> 
             
             <div class="steps">
@@ -594,16 +585,6 @@
                     <div class="date">2017/2018</div>
                 </div>
 
-                <!-- <div class="steps-container" data-aos="fade-left">
-                    <div class="content">
-                        <h2>ATC Simulator Instructor</h2>
-                        <p>Advanced to simulator refreshing training instructor, conducting advanced training programs for experienced controllers.</p>
-                        <span class="category atc">ATC Career</span>
-                    </div>
-                    <i class="step-line"></i>
-                    <div class="date">2018</div>
-                </div> -->
-
                 <!-- Computer Science Journey with Assembly -->
                 <div class="paired-content" data-aos="fade-up">
                     <div class="paired-left">
@@ -632,8 +613,7 @@
                     <div class="paired-right">
                         <div class="content">
                             <h2>Master's Degree at UWA</h2>
-                            <p>Pursued Master's degree in Computer Science at University of Western Australia for 2 years, studeid computer science 
-systematically.</p>
+                            <p>Pursued Master's degree in Computer Science at University of Western Australia for 2 years, studeid computer science systematically.</p>
                             <span class="category education">Education</span>
                         </div>
                     </div>
@@ -685,7 +665,7 @@ systematically.</p>
                     <div class="paired-left">
                         <div class="content">
                             <h2>UPC ATM - I am back</h2>
-                            <p>Joined UPC (Universitat Politècnica de Catalunya) to continue research in Air Traffic Management, bringing together aviation experience with  computing skills.</p>
+                            <p>Joined UPC (Universitat Politècnica de Catalunya) to continue research in Air Traffic Management, bringing together aviation experience with computing skills.</p>
                             <span class="category research">Research</span>
                         </div>
                     </div>
@@ -700,6 +680,9 @@ systematically.</p>
             </div>
         </div>
     </div>
+
+    <!-- Fixed Home Button -->
+    <a href="index.html" class="home-button">Home</a>
 
     <!-- AOS JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
